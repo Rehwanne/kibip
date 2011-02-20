@@ -1,0 +1,36 @@
+kibip
+
+What is kibip?
+=================
+kibip, written in bash, searches for placeholders in a .html file 
+and replaces them with information. Sounds boring, sounds simple - but 
+it's powerful!
+
+Placeholders can later contain everything you want, e. g. Feeds, 
+your E-Mails, your IP, date, birthday, a calendar, termines, 
+diskspace, kernel version, new updates for applications, weather - 
+everything. It depends on your fantasy. And of course this submit forms 
+for google etc. So yes, this page should be your startpage.  
+
+It is like iGoogle, Netvibes or other "your personal startpage" 
+stuff - but in theory, much, much more powerful and on a system 
+controlled by you. 
+
+How does it work?
+=================
+kibip uses common unix tools. The output is used to replace the 
+placeholders in the html file. 
+
+CGI support will probably come...
+
+
+
+Why in bash?
+============
+spur-of-the-moment decision
+
+
+The name?
+=========
+The Kiss principle combined with "Bash Information" and 
+"Platform/Portal/Page" or whatever. 
