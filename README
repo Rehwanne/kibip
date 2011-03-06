@@ -21,16 +21,28 @@ How does it work?
 kibip uses common unix tools. The output is used to replace the 
 placeholders in the html file. 
 
-CGI support will probably come...
-
-
 
 Why in bash?
 ============
 spur-of-the-moment decision
 
-
 The name?
 =========
 The Kiss principle combined with "Bash Information" and 
-"Platform/Portal/Page" or whatever. 
+"Platform/Portal/Page" or whatever.
+
+The startpage won't be up to date when my browsers loads it!
+============================================================
+Yes. The startpage is static. Use cron to call kibip frequently or use
+CGI to update everything when the browsers loads the page. 
+
+lol. You should have written it in PHP!
+=======================================
+No.
+
+$HOME/.kibip_config
+===================
+Variables:
+root=[Path to the directory of kibip]
+srcfile=[Source html file]
+dstfile=[Output html file - the startpage]

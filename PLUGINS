@@ -22,25 +22,33 @@ Format:
 #Requires: [program name]
 
 The function "check_reqs" is using this information. Your plugin should 
-check for its requirements. If they are not met, use log_error (and 
+check for its requirements too. If they are not met, use log_error (and 
 exit). You can replace the affected placeholder with the same error 
 message so the user can know faster about this issue.
 
 User interaction
 ****************
+kibip was never intended to work with AJAX or something. It was
+orginally planned to interact with the user only with a command line
+interface. This is odd for a "personal startpage", but hey, the whole
+project is it. 
 
-Command line interface
-======================
+CLI
+===
 Called usually by the user:
 kibip [plugin name] [plugin function] [args...]
 
 You can use the $root variable of kibip inside your plugin.
+CGI 
+===
+cgi/ contains "shellcgi", which you can use within plugins with source
+$root/cgi/shellcgi.
 
-While no CGI support is available, this is the best method to 
-interact with users. 
+
+
 
 stat(1)
-====
+======
 This is possible, but shouldn't be used imho. You can compare
 access times of files so you know if a link was clicked.
 
@@ -57,9 +65,9 @@ Handling placeholder parameters:
 If you replace with a command, you can access the arguments with
 something like this:
 
-replace cmd "{os_uname \([^}]\+\)}" "uname \1"
+replace cmd "{os_uname\s*\([^}]*\)}" "uname \1"
 
-Backreference as usually. \([^}]\+\)} avoids problems which could occur 
+Backreference as usually. \([^}]*\) avoids problems which could occur 
 with the greedy matching behavior of sed.
 
 
