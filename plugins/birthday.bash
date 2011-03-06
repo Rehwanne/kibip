@@ -1,4 +1,5 @@
 #!/bin/bash
+exit
 #Birthday Plugin for kibip
 #Just another - and stupid -  demonstration. Who needs this actually? 
 #{birthday_names}: Whos birthday is today?

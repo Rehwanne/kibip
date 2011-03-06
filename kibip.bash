@@ -1,9 +1,8 @@
 #!/bin/bash
 #kibip 
 
-root="/media/externHDD/DEV/kibip"
-srcfile="/home/nin/start2.html"
-dstfile="/home/nin/start.html"
+source $HOME/.kibip_config 
+
 cp $srcfile $dstfile
 cd $root
 
@@ -38,6 +37,7 @@ function replace()
 
 	bash $tmp > $dstfile
 	rm $tmp
+	rm tmpcontent
 }
 
 

@@ -1,0 +1,28 @@
+#!/bin/bash
+#Todo: file upload handling, everything
+#Public domain code. 
+#Some functions to work with CGI. 
+
+DELIM="&" 
+
+[ "$REQUEST_METHOD" = "POST" ] && read -n $HTTP_CONTENT_LENGTH postcontent
+
+function cgi_urldecode()
+{
+echo $1 | echo -e $(sed -e 's/%/\\x/g') | sed -e 's/+/ /g'
+}
+
+#Can you inject?
+#These functions are doing the same (only difference: the source of data) so we could put it in one. Could. 
+function cgi_get()
+{
+echo $QUERY_STRING | sed -e "s/.*$1=\([^$DELIM]*\).*/\1/g"
+}
+
+function cgi_post()
+{
+echo $postcontent | sed -e "s/.*$1=\([^$DELIM]*\).*/\1/g"
+}
+
+#I had the idea of providing functions like setcookie. This was within a night - and I wasn't drunk.
+#It is a good idea if you want to fool yourself :-)...
